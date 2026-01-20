@@ -80,6 +80,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app. You'll be r
      - `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`
      - `STRIPE_SECRET_KEY`
      - `STRIPE_PRICE_ID`
+     
 
 4. Deploy!
 
