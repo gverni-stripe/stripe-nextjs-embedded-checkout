@@ -24,7 +24,6 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <Script src="https://js.stripe.com/v3" async />
       <div id="checkout">
         <EmbeddedCheckoutProvider
           stripe={stripePromise}
