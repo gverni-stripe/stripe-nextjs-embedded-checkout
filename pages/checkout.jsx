@@ -1,4 +1,5 @@
 import React, { useCallback } from "react";
+import Script from 'next/script';
 import { loadStripe } from '@stripe/stripe-js';
 import {
   EmbeddedCheckoutProvider,
@@ -22,14 +23,17 @@ const CheckoutPage = () => {
   const options = { fetchClientSecret };
 
   return (
-    <div id="checkout">
-      <EmbeddedCheckoutProvider
-        stripe={stripePromise}
-        options={options}
-      >
-        <EmbeddedCheckout />
-      </EmbeddedCheckoutProvider>
-    </div>
+    <>
+      <Script src="https://js.stripe.com/v3" async />
+      <div id="checkout">
+        <EmbeddedCheckoutProvider
+          stripe={stripePromise}
+          options={options}
+        >
+          <EmbeddedCheckout />
+        </EmbeddedCheckoutProvider>
+      </div>
+    </>
   )
 }
 
