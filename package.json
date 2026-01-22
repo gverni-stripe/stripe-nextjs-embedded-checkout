@@ -9,11 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@stripe/react-connect-js": "^3.3.32",
     "@stripe/react-stripe-js": "^3.7.0",
     "@stripe/stripe-js": "^7.3.0",
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "stripe": "^8.202.0"
+    "stripe": "^20.2.0"
   }
 }

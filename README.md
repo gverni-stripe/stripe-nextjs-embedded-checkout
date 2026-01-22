@@ -54,9 +54,12 @@ Open [http://localhost:3000](http://localhost:3000) to view the app. You'll be r
 │   ├── _app.jsx              # Next.js app wrapper
 │   ├── index.jsx             # Home page (redirects to checkout)
 │   ├── checkout.jsx          # Embedded checkout page
+│   ├── checkout-with-banner.jsx  # Checkout + Notification Banner
 │   ├── return.jsx            # Success/return page
+│   ├── checkout-versions/    # Different checkout implementations
 │   └── api/
 │       ├── create-checkout-session.js  # Creates Stripe session
+│       ├── create-account-session.js   # Creates Account session (Connect)
 │       └── session-status.js           # Retrieves session status
 ├── styles/
 │   └── globals.css           # Global styles
@@ -102,6 +105,23 @@ Use Stripe's test cards for testing:
 
 Use any future expiration date, any 3-digit CVC, and any 5-digit postal code.
 
+## Pages
+
+### Main Checkout Page (`/checkout`)
+Standard Stripe Embedded Checkout implementation.
+
+### Checkout with Notification Banner (`/checkout-with-banner`)
+Combines Stripe Embedded Checkout with Stripe Connect's Notification Banner component. This page demonstrates:
+- **Embedded Checkout** for payment collection
+- **Notification Banner** for displaying connected account notifications
+
+**Note:** The notification banner requires a Stripe Connect account. Set the `STRIPE_CONNECTED_ACCOUNT_ID` environment variable to test this feature.
+
+See [CHECKOUT-WITH-BANNER.md](./CHECKOUT-WITH-BANNER.md) for detailed setup and usage instructions.
+
+### Checkout Versions (`/checkout-versions/`)
+Contains different implementations of the checkout page for testing various Stripe.js loading strategies. See `pages/checkout-versions/README.md` for details.
+
 ## Environment Variables
 
 | Variable | Description | Required |
@@ -109,6 +129,7 @@ Use any future expiration date, any 3-digit CVC, and any 5-digit postal code.
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | Your Stripe publishable key | Yes |
 | `STRIPE_SECRET_KEY` | Your Stripe secret key | Yes |
 | `STRIPE_PRICE_ID` | The Stripe Price ID for your product | Yes |
+| `STRIPE_CONNECTED_ACCOUNT_ID` | Your Stripe Connect account ID (for notification banner) | Optional |
 
 **Important:** Never commit `.env.local` to version control. The `.gitignore` file is configured to exclude it.
 
