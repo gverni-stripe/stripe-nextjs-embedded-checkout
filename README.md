@@ -55,6 +55,7 @@ Open [http://localhost:3000](http://localhost:3000) to view the app. You'll be r
 │   ├── index.jsx             # Home page (redirects to checkout)
 │   ├── checkout.jsx          # Embedded checkout page
 │   ├── checkout-with-banner.jsx  # Checkout + Notification Banner
+│   ├── connect-dashboard.jsx # SPA with sidebar navigation
 │   ├── return.jsx            # Success/return page
 │   ├── checkout-versions/    # Different checkout implementations
 │   └── api/
@@ -118,6 +119,19 @@ Combines Stripe Embedded Checkout with Stripe Connect's Notification Banner comp
 **Note:** The notification banner requires a Stripe Connect account. Set the `STRIPE_CONNECTED_ACCOUNT_ID` environment variable to test this feature.
 
 See [CHECKOUT-WITH-BANNER.md](./CHECKOUT-WITH-BANNER.md) for detailed setup and usage instructions.
+
+### Connect Dashboard (`/connect-dashboard`)
+A Single Page Application (SPA) with sidebar navigation that allows you to:
+- Initialize the **Notification Banner** component first (shown by default)
+- Load the **Embedded Checkout** on demand (only when clicking the Checkout link)
+
+This route is useful for testing the initialization order and ensuring the Notification Banner loads before the checkout. Features:
+- Sidebar navigation with visual feedback
+- Lazy loading of the checkout component
+- Console logging for tracking component lifecycle
+- Modern dashboard UI
+
+**Note:** Requires `STRIPE_CONNECTED_ACCOUNT_ID` for the Notification Banner to function.
 
 ### Checkout Versions (`/checkout-versions/`)
 Contains different implementations of the checkout page for testing various Stripe.js loading strategies. See `pages/checkout-versions/README.md` for details.
