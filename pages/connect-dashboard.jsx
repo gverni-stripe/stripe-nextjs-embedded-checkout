@@ -100,6 +100,9 @@ const ConnectDashboard = () => {
         body {
           margin: 0;
           padding: 0;
+          display: block !important;
+          justify-content: flex-start !important;
+          height: auto !important;
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
             'Helvetica Neue', 'Ubuntu', sans-serif;
         }
@@ -107,13 +110,15 @@ const ConnectDashboard = () => {
           display: flex;
           min-height: 100vh;
           background: #f6f9fc;
+          width: 100%;
         }
         .sidebar {
-          width: 250px;
+          width: 30%;
           background: #ffffff;
           border-right: 1px solid #e6e6e6;
           padding: 20px 0;
           box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+          flex-shrink: 0;
         }
         .sidebar-header {
           padding: 0 20px 20px;
@@ -155,19 +160,17 @@ const ConnectDashboard = () => {
           color: #0066cc;
         }
         .nav-item-icon {
-          display: inline-block;
-          width: 20px;
-          margin-right: 10px;
-          text-align: center;
+          display: none;
         }
         .main-content {
-          flex: 1;
+          width: 70%;
           padding: 40px;
           overflow-y: auto;
+          flex-shrink: 0;
         }
         .content-wrapper {
-          max-width: 1200px;
-          margin: 0 auto;
+          width: 100%;
+          max-width: none;
         }
         .content-header {
           margin-bottom: 30px;
