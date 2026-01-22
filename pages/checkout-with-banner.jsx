@@ -74,14 +74,24 @@ const CheckoutWithBannerPage = () => {
 
   return (
     <>
-      <style jsx>{`
+      <style jsx global>{`
+        body {
+          margin: 0;
+          padding: 0;
+          display: block;
+          height: auto;
+        }
         .container {
-          max-width: 800px;
+          width: 100%;
+          max-width: 1200px;
+          min-width: 800px;
           margin: 0 auto;
-          padding: 20px;
+          padding: 40px;
+          box-sizing: border-box;
         }
         .notification-section {
           margin-bottom: 30px;
+          width: 100%;
         }
         .message {
           padding: 12px;
@@ -98,6 +108,13 @@ const CheckoutWithBannerPage = () => {
         }
         .checkout-section {
           margin-top: 30px;
+          width: 100%;
+        }
+        .checkout-section #checkout {
+          width: 100% !important;
+          max-width: 100% !important;
+          min-width: 100% !important;
+          overflow: visible;
         }
       `}</style>
 
